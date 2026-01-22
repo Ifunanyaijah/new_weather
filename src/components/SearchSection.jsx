@@ -8,7 +8,7 @@ const SearchSection = ({getWeatherDeets, inputRef }) => {
   const handleSearch = (e) => {
     e.preventDefault();
     const searchInput = e.target.querySelector(".search-input");
-    const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${searchInput.value}&days=2`;
+    const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${searchInput.value}&days=2`;
     getWeatherDeets(API_URL);//gets weather deets from the api
   };
 //for finding location using long and lat
@@ -16,7 +16,7 @@ const handleLocation = () => {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       const {latitude, longitude} = position.coords;
-      const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${latitude}, &q=${longitude}&days=2`;
+      const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${latitude}, &q=${longitude}&days=2`;
       getWeatherDeets(API_URL); //weather deets from user location
      window.innerWidth >= 768 && inputRef.current.focus();
     },
@@ -41,3 +41,4 @@ const handleLocation = () => {
 };
 
 export default SearchSection
+
