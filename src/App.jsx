@@ -56,7 +56,7 @@ filterhour(combinedhour);
   //default city to show
   useEffect(() => {
     const defaultCity = "Port Au Prince"
-const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity}&days=2`;
+const API_URL = `httpS://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity}&days=2`;
     getWeatherDeets(API_URL);
   }, []);
 
